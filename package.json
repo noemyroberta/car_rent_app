@@ -1,0 +1,19 @@
+{
+  "name": "car_rent_app",
+  "version": "1.0.0",
+  "description": "Consuming `CarRentAPI`",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noemyroberta/car_rent_app.git"
+  },
+  "author": "Noemy Roberta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noemyroberta/car_rent_app/issues"
+  },
+  "homepage": "https://github.com/noemyroberta/car_rent_app#readme"
+}
