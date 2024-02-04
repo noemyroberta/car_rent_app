@@ -20,11 +20,11 @@ function displayMenu() {
     console.log('1. Show all cars');
     console.log('2. Show all customers');
     console.log('3. Show all rents');
-    console.log('\n\nSHOW ONE ------------');
+    console.log('\nSHOW ONE ------------');
     console.log('4. Show a car');
     console.log('5. Show a rent');
     console.log('6. Show a customer');
-    console.log('\n\nMAIN ------------');
+    console.log('\nMAIN ------------');
     console.log('7. Show customer rents');
     console.log('8. Rent a car');
     console.log('9. Hand over a car');
