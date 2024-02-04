@@ -32,19 +32,28 @@ function displayMenu() {
 
 function main() {
     displayMenu();
-    scanner.question('Choose an option: ', async (choice) => {
-        switch (choice) {
-            case '1':
-                console.log(await car.getAll());
-                break;
-            case '2':
-                console.log(await customer.getAll()['customers']);
-                break;
-            case '3':
-                console.log(await rentCars.getAll()['rents']);
-                break;
-        }
-    });
+
+    while (true) {
+        scanner.question('Choose an option: ', async (choice) => {
+            switch (choice) {
+                case '1':
+                    console.log(await car.getAll());
+                    break;
+                case '2':
+                    console.log(await customer.getAll());
+                    break;
+                case '3':
+                    console.log(await rentCars.getAll());
+                    break;
+
+                default: 
+                    console.log('Invalid option');
+                    scanner.close();
+                    break;
+            }
+        });
+    }
+
 
 }
 
