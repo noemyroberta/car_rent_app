@@ -30,6 +30,12 @@ function displayMenu() {
     console.log('9. Hand over a car');
 }
 
+function input(question) {
+    return new Promise((resolve) => {
+        scanner.question(question, resolve);
+    });
+}
+
 function main() {
     displayMenu();
 
@@ -45,8 +51,51 @@ function main() {
                 case '3':
                     console.log(await rentCars.getAll());
                     break;
+                case '4':
+                    const carUuid = await input('Car UUID: ');
+                    if (carUuid) {
+                        console.log(await car.getByUuid(carUuid));
+                    }
+                    break;
+                case '5':
+                    const rentUuid = await input('Rent UUID: ');
+                    if (rentUuid) {
+                        console.log(await rentCars.getByUuid(rentUuid));
+                    }
+                    break;
+                case '6':
+                    const customerUuid = await input('Customer UUID: ');
+                    if (customerUuid) {
+                        console.log(await customer.getByUuid(customerUuid));
+                    }
+                    break;
+                case '7':
+                    const uuid = await input('Customer UUID: ');
+                    if (uuid) {
+                        console.log(await rentCars.getAllByCustomer(uuid));
+                    }
+                    break;
+                case '8':
+                    const endDate = await input('End Date (YYYY-MM-DD): ');
+                    const carRequest = await input('Car UUID: ');
+                    const customerRequest = await input('Customer UUID: ');
+                    if (endDate && carRequest && customerRequest) {
+                        const request = {
+                            endDate: endDate,
+                            carUuid: carRequest,
+                            customerUuid: customerRequest,
+                        };
+                        console.log(await rentCars.rent(request));
+                    }
+                    break;
+                case '9':
+                    const handOverUuid = await input('Rent UUID: ');
+                    if (handOverUuid) {
+                        console.log(await rentCars.handOver(handOverUuid));
+                    }
+                    break;
 
-                default: 
+                default:
                     console.log('Invalid option');
                     scanner.close();
                     break;
