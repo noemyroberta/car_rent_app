@@ -8,9 +8,7 @@ class RentCarsDatasource {
     async getAll() {
         try {
             const response = await axios.get(`${this.baseURL}/rental/`);
-            if (response.statusCode == 200) {
-                return response.data;
-            }
+            return response.data;
         } catch (error) {
             throw new Error(`Error fetching rents: ${error.message}`);
         }
