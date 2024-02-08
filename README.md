@@ -28,7 +28,7 @@ You'll install all of the following deps:
     "express": "^4.18.2"
 ```
 
-#### 3. Run the project
+#### 4. Run the project
 
 `node app.js`
 
